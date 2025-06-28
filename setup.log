@@ -1,0 +1,52 @@
+🚀 Starting 3D Fashion Studio Setup - Sun 29 Jun 00:48:08 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📦 Installing dependencies...
+🔧 Executing: npm install three @react-three/fiber @react-three/drei three-stl-loader dat.gui --save
+
+added 69 packages, and audited 101 packages in 1m
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+🔧 Executing: npm install @vitejs/plugin-react sass --save-dev
+
+added 48 packages, and audited 149 packages in 25s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+✅ Dependencies installed successfully
+📁 Creating project structure...
+🔧 Executing: mkdir -p src/components src/styles src/assets/models src/assets/textures
+🛒 Downloading 3D model...
+🔧 Executing: wget --no-verbose -O src/assets/models/mannequin.stl https://cdn.jsdelivr.net/gh/mrdoob/three.js/dev/examples/models/stl/ascii/slotted_disk.stl
+https://cdn.jsdelivr.net/gh/mrdoob/three.js/dev/examples/models/stl/ascii/slotted_disk.stl:
+2025-06-29 00:49:48 ERROR 403: Forbidden.
+❌ Error executing: wget --no-verbose -O src/assets/models/mannequin.stl https://cdn.jsdelivr.net/gh/mrdoob/three.js/dev/examples/models/stl/ascii/slotted_disk.stl
+🚀 Starting 3D Fashion Studio Setup - Sun 29 Jun 00:54:52 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📦 Installing dependencies...
+🔧 Executing: npm install three @react-three/fiber @react-three/drei three-stl-loader dat.gui --save
+
+up to date, audited 149 packages in 9s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+🔧 Executing: npm install @vitejs/plugin-react sass --save-dev
+
+up to date, audited 149 packages in 7s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+✅ Dependencies installed successfully
+📁 Creating project structure...
+🔧 Executing: mkdir -p src/components src/styles src/assets/models src/assets/textures
+🛠️ Creating 3D model...
+✅ Basic model created
+🎨 Creating textures...

@@ -1,0 +1,357 @@
+🚀 Starting Ultimate 3D Fashion Studio Fix - Sun 29 Jun 01:14:24 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+🛠️ Checking for ImageMagick...
+📦 Installing ImageMagick...
+🔧 Executing: sudo apt-get update
+Hit:1 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Hit:2 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease
+Ign:4 https://storage.googleapis.com/download.dartlang.org/linux/debian stable InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:7 https://dl.winehq.org/wine-builds/ubuntu jammy InRelease
+Hit:8 https://storage.googleapis.com/download.dartlang.org/linux/debian stable Release
+Hit:9 https://packages.microsoft.com/repos/edge stable InRelease
+Get:11 https://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]
+Hit:12 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main i386 Packages [483 kB]
+Get:14 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,212 B]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,168 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,092 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/universe i386 Packages [662 kB]
+Fetched 3,533 kB in 9s (406 kB/s)
+Reading package lists...
+🔧 Executing: sudo apt-get install -y imagemagick
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  apturl-common atop avahi-utils bmon ccze cheese-common clang-tidy
+  clang-tidy-14 clang-tools-14 cmatrix dkms gedit-common
+  gir1.2-freedesktop-dev gir1.2-gck-1 gir1.2-gcr-3 gir1.2-goa-1.0
+  gir1.2-gst-plugins-bad-1.0 gir1.2-gweather-3.0 gir1.2-javascriptcoregtk-4.0
+  gir1.2-json-1.0 gir1.2-nma-1.0 gir1.2-snapd-1 gir1.2-soup-2.4
+  gir1.2-webkit2-4.0 gnome-bluetooth-common gnome-software-common
+  gnome-todo-common gnome-video-effects guile-2.2-libs htop jp2a
+  libabsl20210324 libann0 libarmadillo10 libatk-bridge2.0-dev libatk1.0-data
+  libatk1.0-dev libatkmm-1.6-1v5 libatspi2.0-dev libauthen-sasl-perl
+  libboost-atomic-dev libboost-chrono-dev libboost-container-dev
+  libboost-context-dev libboost-coroutine-dev libboost-exception-dev
+  libboost-fiber-dev libboost-filesystem-dev libboost-graph-dev
+  libboost-graph-parallel-dev libboost-iostreams-dev libboost-locale-dev
+  libboost-log-dev libboost-math-dev libboost-mpi-dev
+  libboost-mpi-python1.74.0 libboost-nowide-dev libboost-numpy-dev
+  libboost-program-options-dev libboost-random-dev libboost-serialization-dev
+  libboost-stacktrace-dev libboost-test-dev libboost-timer-dev
+  libboost-tools-dev libboost-type-erasure-dev libboost-wave-dev libbrotli-dev
+  libc++1 libc++1-14 libc++abi1-14 libcairo2-dev libcairomm-1.0-1v5
+  libcamel-1.2-63 libcdt5 libcfitsio9 libcgraph6 libclone-perl
+  libclutter-1.0-common libcogl-common libcogl-path20 libcogl20 libcolord-gtk1
+  libconfuse-common libconfuse2 libdata-dump-perl libdatrie-dev
+  libdazzle-1.0-0 libdazzle-common libdbus-1-dev libdbusmenu-gtk4
+  libdmapsharing-3.0-2 libebackend-1.2-10 libebook-1.2-20
+  libebook-contacts-1.2-3 libecal-2.0-1 libedata-book-1.2-26
+  libedata-cal-2.0-1 libedataserver-1.2-26 libedataserverui-1.2-3 libegl-dev
+  libegl1-mesa-dev libepoxy-dev libfile-listing-perl libflatpak0
+  libfont-afm-perl libfontconfig-dev libfontconfig1-dev libfreerdp-client2-2
+  libfreerdp-server2-2 libfreetype-dev libfreetype6-dev libfribidi-dev
+  libgdal30 libgdk-pixbuf-2.0-dev libgeocode-glib0 libgeos3.10.2 libgl-dev
+  libgles-dev libgles1 libglibmm-2.4-1v5 libglu1-mesa-dev libglvnd-core-dev
+  libglvnd-dev libglx-dev libgnome-bluetooth13 libgnome-todo libgraphite2-dev
+  libgsoap-2.8.117 libgtksourceview-4-common libgts-0.7-5 libgts-bin libgvpr2
+  libgweather-3-16 libgweather-common libhtml-form-perl libhtml-format-perl
+  libhtml-parser-perl libhtml-tagset-perl libhtml-tree-perl
+  libhttp-cookies-perl libhttp-daemon-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libilmbase25 libio-html-perl
+  libio-pty-perl libipc-run-perl libkf5syntaxhighlighting-data
+  libkf5syntaxhighlighting5 liblab-gamut1 libllvm15 liblua5.3-0
+  liblwp-mediatypes-perl liblzf1 libmessaging-menu0 libmozjs-91-0
+  libnet-http-perl libnetplan0 libopencv-calib3d4.5d libopencv-contrib4.5d
+  libopencv-core4.5d libopencv-dnn4.5d libopencv-features2d4.5d
+  libopencv-flann4.5d libopencv-highgui4.5d libopencv-imgcodecs4.5d
+  libopencv-imgproc4.5d libopencv-ml4.5d libopencv-objdetect4.5d
+  libopencv-photo4.5d libopencv-shape4.5d libopencv-stitching4.5d
+  libopencv-superres4.5d libopencv-video4.5d libopencv-videoio4.5d
+  libopencv-videostab4.5d libopencv-viz4.5d libopencv4.5d-jni libopenexr25
+  libopengl-dev liborcus-0.17-0 liborcus-parser-0.17-0 libpathplan4
+  libpcre16-3 libpcre3 libpcre3-dev libpcre32-3 libpcrecpp0v5 libperl5.34
+  libpixman-1-dev libprotobuf23 libpython3.10-dev libqqwing2v5 libqt5designer5
+  libqt5designercomponents5 libqt5qmlworkerscript5 libqt5quicktest5
+  libqt5quickwidgets5 libqt5serialport5 libqt5x11extras5 libqt5xml5t64
+  libqt5xmlpatterns5 libraw20 librest-0.7-0 libsdl1.2debian libsdl2-2.0-0
+  libsigc++-2.0-0v5 libsnapd-glib1 libsoup-gnome2.4-1 libspatialite7
+  libsss-nss-idmap0 libsuperlu5 libtbb2 libtesseract4 libthai-dev
+  libtie-ixhash-perl libtime-duration-perl libtimedate-perl libtry-tiny-perl
+  libunwind-14 libvirglrenderer1 libvncserver1 libvulkan-dev libwayland-bin
+  libwayland-dev libwww-robotrules-perl libwxbase3.0-0v5 libxcb-render0-dev
+  libxcb-shm0-dev libxcomposite-dev libxcursor-dev libxdamage-dev libxdot4
+  libxext-dev libxfixes-dev libxft-dev libxi-dev libxinerama-dev
+  libxkbcommon-dev libxml-xpathengine-perl libxrandr-dev libxrender-dev
+  libxtst-dev libyaml-cpp0.7 linux-headers-6.5.0-44-generic
+  linux-hwe-6.5-headers-6.5.0-44 moreutils pastebinit perl-modules-5.34
+  perl-openssl-defaults plocate python3-future python3-gi-cairo
+  python3-lib2to3 python3-lockfile python3-macaroonbakery python3-netifaces
+  python3-protobuf python3-psutil python3-pyatspi python3-pymacaroons
+  python3-rfc3339 python3-urwid python3-wcwidth python3.10 python3.10-dev
+  python3.10-minimal qdoc-qt5 qml-module-qtgraphicaleffects qml-module-qtqml
+  qml-module-qtqml-models2 qml-module-qtquick-controls
+  qml-module-qtquick-layouts qml-module-qtquick-window2 qml-module-qtquick2
+  qmlscene qt3d5-doc qt5-doc qtattributionsscanner-qt5 qtbase5-dev-tools
+  qtbase5-doc qtcharts5-doc qtconnectivity5-doc qtcreator-data qtcreator-doc
+  qtdatavisualization5-doc qtdeclarative5-dev-tools qtdeclarative5-doc
+  qtgamepad5-doc qtgraphicaleffects5-doc qtlocation5-doc qtmultimedia5-doc
+  qtnetworkauth5-doc qtquickcontrols2-5-doc qtquickcontrols5-doc qtscript5-doc
+  qtscxml5-doc qtsensors5-doc qtserialbus5-doc qtserialport5-doc qtsvg5-doc
+  qttools5-doc qtvirtualkeyboard5-doc qtwayland5-doc qtwebchannel5-doc
+  qtwebengine5-doc qtwebsockets5-doc qtwebview5-doc qtx11extras5-doc
+  qtxmlpatterns5-dev-tools qtxmlpatterns5-doc run-one speedometer tmux
+  virtualbox-dkms wayland-protocols
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  imagemagick-6-common imagemagick-6.q16 libjxr-tools libjxr0t64 liblqr-1-0
+  libmagickcore-6.q16-7-extra libmagickcore-6.q16-7t64
+  libmagickwand-6.q16-7t64 libnetpbm11t64 netpbm
+Suggested packages:
+  imagemagick-6-doc autotrace enscript ffmpeg gimp gnuplot grads graphviz
+  hp2xx html2ps libwmf-bin mplayer povray radiance texlive-base-bin transfig
+  libraw-bin inkscape
+The following NEW packages will be installed:
+  imagemagick imagemagick-6-common imagemagick-6.q16 libjxr-tools libjxr0t64
+  liblqr-1-0 libmagickcore-6.q16-7-extra libmagickcore-6.q16-7t64
+  libmagickwand-6.q16-7t64 libnetpbm11t64 netpbm
+0 upgraded, 11 newly installed, 0 to remove and 460 not upgraded.
+Need to get 4,931 kB of archives.
+After this operation, 19.3 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblqr-1-0 amd64 0.4.2-2.1build2 [28.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6-common all 8:6.9.12.98+dfsg1-5.2build2 [69.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickcore-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [1,811 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickwand-6.q16-7t64 amd64 8:6.9.12.98+dfsg1-5.2build2 [318 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick-6.q16 amd64 8:6.9.12.98+dfsg1-5.2build2 [254 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 imagemagick amd64 8:6.9.12.98+dfsg1-5.2build2 [14.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 libjxr0t64 amd64 1.2~git20170615.f752187-5.1ubuntu2 [181 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/universe amd64 libjxr-tools amd64 1.2~git20170615.f752187-5.1ubuntu2 [15.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 libmagickcore-6.q16-7-extra amd64 8:6.9.12.98+dfsg1-5.2build2 [70.1 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 libnetpbm11t64 amd64 2:11.05.02-1.1build1 [114 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/universe amd64 netpbm amd64 2:11.05.02-1.1build1 [2,054 kB]
+Fetched 4,931 kB in 13s (367 kB/s)
+Selecting previously unselected package liblqr-1-0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 327975 files and directories currently installed.)
+Preparing to unpack .../00-liblqr-1-0_0.4.2-2.1build2_amd64.deb ...
+Unpacking liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+Selecting previously unselected package imagemagick-6-common.
+Preparing to unpack .../01-imagemagick-6-common_8%3a6.9.12.98+dfsg1-5.2build2_all.deb ...
+Unpacking imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package libmagickcore-6.q16-7t64:amd64.
+Preparing to unpack .../02-libmagickcore-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+Unpacking libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package libmagickwand-6.q16-7t64:amd64.
+Preparing to unpack .../03-libmagickwand-6.q16-7t64_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+Unpacking libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package imagemagick-6.q16.
+Preparing to unpack .../04-imagemagick-6.q16_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+Unpacking imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package imagemagick.
+Preparing to unpack .../05-imagemagick_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+Unpacking imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package libjxr0t64:amd64.
+Preparing to unpack .../06-libjxr0t64_1.2~git20170615.f752187-5.1ubuntu2_amd64.deb ...
+Unpacking libjxr0t64:amd64 (1.2~git20170615.f752187-5.1ubuntu2) ...
+Selecting previously unselected package libjxr-tools.
+Preparing to unpack .../07-libjxr-tools_1.2~git20170615.f752187-5.1ubuntu2_amd64.deb ...
+Unpacking libjxr-tools (1.2~git20170615.f752187-5.1ubuntu2) ...
+Selecting previously unselected package libmagickcore-6.q16-7-extra:amd64.
+Preparing to unpack .../08-libmagickcore-6.q16-7-extra_8%3a6.9.12.98+dfsg1-5.2build2_amd64.deb ...
+Unpacking libmagickcore-6.q16-7-extra:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Selecting previously unselected package libnetpbm11t64:amd64.
+Preparing to unpack .../09-libnetpbm11t64_2%3a11.05.02-1.1build1_amd64.deb ...
+Unpacking libnetpbm11t64:amd64 (2:11.05.02-1.1build1) ...
+Selecting previously unselected package netpbm.
+Preparing to unpack .../10-netpbm_2%3a11.05.02-1.1build1_amd64.deb ...
+Unpacking netpbm (2:11.05.02-1.1build1) ...
+Setting up imagemagick-6-common (8:6.9.12.98+dfsg1-5.2build2) ...
+Setting up libnetpbm11t64:amd64 (2:11.05.02-1.1build1) ...
+Setting up libjxr0t64:amd64 (1.2~git20170615.f752187-5.1ubuntu2) ...
+Setting up netpbm (2:11.05.02-1.1build1) ...
+Setting up liblqr-1-0:amd64 (0.4.2-2.1build2) ...
+Setting up libjxr-tools (1.2~git20170615.f752187-5.1ubuntu2) ...
+Setting up libmagickcore-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Setting up libmagickwand-6.q16-7t64:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Setting up imagemagick-6.q16 (8:6.9.12.98+dfsg1-5.2build2) ...
+update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare (compare) in auto mode
+update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare-im6 (compare-im6) in auto mode
+update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate (animate) in auto mode
+update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate-im6 (animate-im6) in auto mode
+update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert (convert) in auto mode
+update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert-im6 (convert-im6) in auto mode
+update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite (composite) in auto mode
+update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite-im6 (composite-im6) in auto mode
+update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure (conjure) in auto mode
+update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure-im6 (conjure-im6) in auto mode
+update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import (import) in auto mode
+update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import-im6 (import-im6) in auto mode
+update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify (identify) in auto mode
+update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify-im6 (identify-im6) in auto mode
+update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream (stream) in auto mode
+update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream-im6 (stream-im6) in auto mode
+update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display (display) in auto mode
+update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display-im6 (display-im6) in auto mode
+update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage (montage) in auto mode
+update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage-im6 (montage-im6) in auto mode
+update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify (mogrify) in auto mode
+update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify-im6 (mogrify-im6) in auto mode
+Setting up libmagickcore-6.q16-7-extra:amd64 (8:6.9.12.98+dfsg1-5.2build2) ...
+Setting up imagemagick (8:6.9.12.98+dfsg1-5.2build2) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+🔄 Cleaning and reinstalling dependencies...
+🔧 Executing: npm install three@latest @react-three/fiber@latest @react-three/drei@latest three-stdlib dat.gui react@18 react-dom@18 @vitejs/plugin-react@latest sass --save
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error
+npm error While resolving: 3dwebsite@1.0.0
+npm error Found: react@18.3.1
+npm error node_modules/react
+npm error   react@"18" from the root project
+npm error   peer react@"*" from expo@53.0.13
+npm error   node_modules/expo
+npm error     peerOptional expo@">=43.0" from @react-three/fiber@9.1.2
+npm error     node_modules/@react-three/fiber
+npm error       @react-three/fiber@"9.1.2" from the root project
+npm error       1 more (@react-three/drei)
+npm error     peer expo@"*" from @expo/dom-webview@0.1.5
+npm error     node_modules/@expo/dom-webview
+npm error       peerOptional @expo/dom-webview@"*" from expo@53.0.13
+npm error     3 more (expo-asset, expo-file-system, expo-gl)
+npm error   6 more (@expo/dom-webview, react-native-webview, expo-asset, ...)
+npm error
+npm error Could not resolve dependency:
+npm error peer react@"^19.0.0" from @react-three/fiber@9.1.2
+npm error node_modules/@react-three/fiber
+npm error   @react-three/fiber@"9.1.2" from the root project
+npm error   peer @react-three/fiber@"^9.0.0" from @react-three/drei@10.3.0
+npm error   node_modules/@react-three/drei
+npm error     @react-three/drei@"10.3.0" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /home/davis/.npm/_logs/2025-06-28T22_15_32_626Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-28T22_15_32_626Z-debug-0.log
+❌ Error executing: npm install three@latest @react-three/fiber@latest @react-three/drei@latest three-stdlib dat.gui react@18 react-dom@18 @vitejs/plugin-react@latest sass --save
+🚀 Starting Ultimate 3D Fashion Studio Fix - Sun 29 Jun 01:17:41 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+🛠️ Checking for ImageMagick...
+✅ ImageMagick already installed
+🔄 Cleaning and removing conflicting dependencies...
+🗑️ Removing Expo and React Native dependencies...
+🔧 Executing: npm pkg delete dependencies.expo
+🔧 Executing: npm pkg delete dependencies.@expo/dom-webview
+🔧 Executing: npm pkg delete dependencies.expo-asset
+🔧 Executing: npm pkg delete dependencies.expo-file-system
+🔧 Executing: npm pkg delete dependencies.expo-gl
+🔧 Executing: npm pkg delete dependencies.react-native-webview
+🔄 Installing dependencies...
+🔧 Executing: npm install three@0.169.0 @react-three/fiber@8.17.8 @react-three/drei@9.114.0 three-stdlib@2.32.2 dat.gui@0.7.9 react@18.3.1 react-dom@18.3.1 @vitejs/plugin-react@4.3.2 sass@1.80.4 --save
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error
+npm error While resolving: 3dwebsite@1.0.0
+npm error Found: vite@7.0.0
+npm error node_modules/vite
+npm error   dev vite@"^7.0.0" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peer vite@"^4.2.0 || ^5.0.0" from @vitejs/plugin-react@4.3.2
+npm error node_modules/@vitejs/plugin-react
+npm error   dev @vitejs/plugin-react@"4.3.2" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /home/davis/.npm/_logs/2025-06-28T22_17_42_413Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-28T22_17_42_413Z-debug-0.log
+⚠️ Warning: Error executing: npm install three@0.169.0 @react-three/fiber@8.17.8 @react-three/drei@9.114.0 three-stdlib@2.32.2 dat.gui@0.7.9 react@18.3.1 react-dom@18.3.1 @vitejs/plugin-react@4.3.2 sass@1.80.4 --save
+⚠️ Retrying npm install with --legacy-peer-deps...
+🔧 Executing: npm install three@0.169.0 @react-three/fiber@8.17.8 @react-three/drei@9.114.0 three-stdlib@2.32.2 dat.gui@0.7.9 react@18.3.1 react-dom@18.3.1 @vitejs/plugin-react@4.3.2 sass@1.80.4 --save --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+npm warn tar TAR_ENTRY_ERROR ENOENT: no such file or directory, open '/home/davis/Desktop/3dwebsite/node_modules/sass/types/legacy/options.d.ts'
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     '/home/davis/Desktop/3dwebsite/node_modules/sass',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir '/home/davis/Desktop/3dwebsite/node_modules/sass/types/value'] {
+npm warn cleanup       errno: -39,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: '/home/davis/Desktop/3dwebsite/node_modules/sass/types/value'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '/home/davis/Desktop/3dwebsite/node_modules',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir '/home/davis/Desktop/3dwebsite/node_modules/sass/types/value'] {
+npm warn cleanup       errno: -39,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: '/home/davis/Desktop/3dwebsite/node_modules/sass/types/value'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code ECONNRESET
+npm error network aborted
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-28T22_17_50_991Z-debug-0.log
+⚠️ Warning: Error executing: npm install three@0.169.0 @react-three/fiber@8.17.8 @react-three/drei@9.114.0 three-stdlib@2.32.2 dat.gui@0.7.9 react@18.3.1 react-dom@18.3.1 @vitejs/plugin-react@4.3.2 sass@1.80.4 --save --legacy-peer-deps
+🔧 Executing: npm install --save-dev @types/react@18.3.11 @types/react-dom@18.3.0
+
+added 151 packages, changed 1 package, and audited 153 packages in 48s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+✅ Dependencies installed successfully
+📁 Rebuilding project structure...
+🔧 Executing: mkdir -p src/components src/styles src/assets/models src/assets/textures
+🛠️ Creating fallback STL model...
+✅ Fallback STL model created
+🎨 Generating fallback textures...
+Creating texture: fabric1.jpg with color #a8d8ea
+Creating texture: fabric2.jpg with color #aa96da
+Creating texture: leather.jpg with color #fcbad3
+✅ Textures created successfully
+⚙️ Creating Vite configuration...
+📝 Creating main.jsx...
+📝 Creating App.jsx...
+📝 Creating DebugScene.jsx...
+📝 Creating main.scss...
+📝 Creating index.html...
+⚙️ Updating package.json scripts...
+🔧 Executing: npm pkg set scripts.dev=vite
+🔧 Executing: npm pkg set scripts.build=vite build
+🔧 Executing: npm pkg set scripts.preview=vite preview
+🔍 Verifying setup...
+✅ main.jsx exists
+✅ App.jsx exists
+✅ DebugScene.jsx exists
+✅ main.scss exists
+✅ index.html exists
+✅ vite.config.js exists
+🔍 Checking package.json for conflicting dependencies...
+✅ No 'expo' dependency found
+🎉 Setup completed successfully!
+👉 Run the project with: npm run dev
+🌐 Open: http://localhost:3000
+📄 Full log saved to: ultimate-fix.log
