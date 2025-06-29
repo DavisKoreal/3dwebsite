@@ -204,3 +204,57 @@ Error:   Failed to scan for dependencies from entries:
 3:54:19 PM [vite] page reload index.html
 3:54:19 PM [vite] page reload src/main.jsx
 3:54:20 PM [vite] vite.config.js changed, restarting server...
+✘ [ERROR] "vite" resolved to an ESM file. ESM file cannot be loaded by `require`. See https://vite.dev/guide/troubleshooting.html#this-package-is-esm-only for more details. [plugin externalize-deps]
+
+    node_modules/esbuild/lib/main.js:1225:27:
+      1225 │           let pluginName = getFlag(result, keys, "pluginName", m...
+           ╵                            ^
+
+    at file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66911:23
+    at requestCallbacks.on-resolve (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:1225:28)
+    at handleRequest (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:647:17)
+    at handleIncomingPacket (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:672:7)
+    at Socket.readFromStdout (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:507:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/esbuild/lib/main.js:1150:20:
+      1150 │           plugin.onEnd = true;
+           ╵                     ^
+
+    at setup (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66873:18)
+    at handlePlugins (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:1150:21)
+    at buildOrContextImpl (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:873:5)
+    at Object.buildOrContext (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:699:5)
+    at /home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:2023:15
+    at new Promise (<anonymous>)
+    at Object.build (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:2022:25)
+    at build (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:1873:51)
+    at bundleConfigFile (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66828:24)
+    at loadConfigFromFile (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66798:27)
+    at resolveConfig (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:66399:30)
+    at _createServer (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:62999:24)
+    at restartServer (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63525:25)
+    at Object.restart (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63201:34)
+    at restartServerWithUrls (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63564:16)
+    at handleHMRUpdate (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63666:13)
+    at onHMRUpdate (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63255:15)
+    at FSWatcher.<anonymous> (file:///home/davis/Desktop/3dwebsite/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:63287:11)
+
+  The plugin "externalize-deps" was triggered by this import
+
+    vite.config.js:1:294:
+      1 │ ...sktop/3dwebsite/vite.config.js";import { defineConfig } from 'vite'
+        ╵                                                                 ~~~~~~
+
+failed to load config from /home/davis/Desktop/3dwebsite/vite.config.js
+3:54:20 PM [vite] Build failed with 1 error:
+node_modules/esbuild/lib/main.js:1225:27: ERROR: [plugin: externalize-deps] "vite" resolved to an ESM file. ESM file cannot be loaded by `require`. See https://vite.dev/guide/troubleshooting.html#this-package-is-esm-only for more details.
+3:54:20 PM [vite] server restart failed
+Killed
+⚠️ Warning: Error executing: npm run dev

@@ -1,4 +1,4 @@
-===== Repository State: Sun 29 Jun 15:49:21 EAT 2025 =====
+===== Repository State: Sun 29 Jun 15:54:20 EAT 2025 =====
 Directory: /home/davis/Desktop/3dwebsite
 
 ===== ./index.html =====
@@ -54,7 +54,7 @@ export default function App() {
         </div>
       </div>
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
-        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></Suspense>}>
+        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></mesh>}>
           <ModelViewer color={color} outfit={outfit} rotation={rotation} setError={setError} />
         </Suspense>
       </Canvas>
@@ -218,7 +218,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true,
-    strictPort: true // Fail if port is in use
+    strictPort: true
   },
   resolve: {
     alias: {
@@ -251,6 +251,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   fix-3dwebsite.log
+	modified:   fix-jsx-3dwebsite.log
 	modified:   fix-static-3dwebsite.log
 	modified:   printstate.log
 	modified:   state.txt
