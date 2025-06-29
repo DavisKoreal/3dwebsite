@@ -33,7 +33,7 @@ export default function App() {
         </div>
       </div>
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
-        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></Suspense>}>
+        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></mesh>}>
           <ModelViewer color={color} outfit={outfit} rotation={rotation} setError={setError} />
         </Suspense>
       </Canvas>

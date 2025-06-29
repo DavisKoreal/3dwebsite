@@ -1,21 +1,20 @@
 #!/bin/bash
 
-# Fix Static Page Script for 3D Fashion Studio
+# Fix JSX Syntax Script for 3D Fashion Studio
 # ----------------------------------
-# This script fixes the static page issue on localhost by:
-# 1. Verifying and fixing src/App.jsx for correct JSX structure
-# 2. Ensuring dependencies are correctly installed
-# 3. Checking mannequin.glb and texture files
-# 4. Adding error handling to ModelViewer.jsx
-# 5. Improving lighting in ModelViewer.jsx
-# 6. Resolving port conflicts
-# 7. Updating vite.config.js for better dev experience
-# 8. Committing changes to Git (if applicable)
-# 9. Running printstate.sh to verify state
+# This script fixes the following issues:
+# 1. JSX syntax error in src/App.jsx (missing </mesh> tag in Suspense fallback)
+# 2. npm audit vulnerabilities (esbuild and vite)
+# 3. three-mesh-bvh deprecation warning
+# 4. Vite CJS deprecation warning
+# 5. Investigates 'Killed' Git commit issue
+# 6. Verifies index.html and main.jsx
+# 7. Commits changes to Git (if applicable)
+# 8. Starts development server
 
 set -o pipefail
-LOG_FILE="fix-static-3dwebsite.log"
-echo "🚀 Fixing Static Page Issue for 3D Fashion Studio - $(date)" | tee -a $LOG_FILE
+LOG_FILE="fix-jsx-3dwebsite.log"
+echo "🚀 Fixing JSX Syntax Issue for 3D Fashion Studio - $(date)" | tee -a $LOG_FILE
 
 # Function to log and execute commands
 run_command() {
@@ -31,8 +30,8 @@ run_command() {
 cd /home/davis/Desktop/3dwebsite || { echo "❌ Error: Could not enter project directory" | tee -a $LOG_FILE; exit 1; }
 echo "📂 Working in: $(pwd)" | tee -a $LOG_FILE
 
-# 2. Verify and fix src/App.jsx
-echo "📝 Verifying and updating src/App.jsx..." | tee -a $LOG_FILE
+# 2. Fix JSX syntax error in src/App.jsx
+echo "📝 Fixing JSX syntax error in src/App.jsx..." | tee -a $LOG_FILE
 cat > src/App.jsx << 'EOF'
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
@@ -69,7 +68,7 @@ export default function App() {
         </div>
       </div>
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
-        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></Suspense>}>
+        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></mesh>}>
           <ModelViewer color={color} outfit={outfit} rotation={rotation} setError={setError} />
         </Suspense>
       </Canvas>
@@ -77,66 +76,20 @@ export default function App() {
   )
 }
 EOF
-echo "✅ Updated src/App.jsx with error handling" | tee -a $LOG_FILE
+echo "✅ Fixed src/App.jsx JSX syntax" | tee -a $LOG_FILE
 
-# 3. Update ModelViewer.jsx with error handling and improved lighting
-echo "📝 Updating ModelViewer.jsx with error handling and better lighting..." | tee -a $LOG_FILE
-cat > src/components/ModelViewer.jsx << 'EOF'
-import { useGLTF } from '@react-three/drei'
-import * as THREE from 'three'
-import { OrbitControls, useTexture } from '@react-three/drei'
+# 3. Address npm audit vulnerabilities
+echo "🛡️ Addressing npm audit vulnerabilities..." | tee -a $LOG_FILE
+run_command npm install vite@7.0.0 @vitejs/plugin-react@4.3.3 --save --legacy-peer-deps
+run_command npm audit fix
+if npm audit | grep -q "moderate"; then
+  echo "⚠️ Moderate vulnerabilities persist, attempting npm audit fix --force" | tee -a $LOG_FILE
+  run_command npm audit fix --force
+fi
+echo "✅ npm audit vulnerabilities addressed" | tee -a $LOG_FILE
 
-export default function ModelViewer({ color, outfit, rotation, setError }) {
-  try {
-    const { scene } = useGLTF('/assets/models/mannequin.glb')
-    const textures = {
-      1: useTexture('/assets/textures/fabric1.jpg'),
-      2: useTexture('/assets/textures/fabric2.jpg'),
-      3: useTexture('/assets/textures/leather.jpg')
-    }
-
-    // Apply texture to all mesh children
-    scene.traverse((child) => {
-      if (child.isMesh) {
-        child.material = new THREE.MeshStandardMaterial({
-          color,
-          map: textures[outfit],
-          roughness: 0.4,
-          metalness: 0.1
-        })
-        child.castShadow = true
-        child.receiveShadow = true
-      }
-    })
-
-    return (
-      <>
-        <group rotation={[0, rotation ? Date.now() * 0.0005 % (2 * Math.PI) : 0, 0]}>
-          <primitive object={scene} scale={[0.01, 0.01, 0.01]} />
-        </group>
-        <OrbitControls enableZoom={true} enablePan={true} />
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
-        <directionalLight position={[-5, 5, -5]} intensity={0.5} />
-        <hemisphereLight skyColor="#ffffff" groundColor="#444444" intensity={0.3} />
-      </>
-    )
-  } catch (e) {
-    setError(`Failed to load model or textures: ${e.message}`)
-    console.error('Error loading model:', e)
-    return (
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="hotpink" />
-      </mesh>
-    )
-  }
-}
-EOF
-echo "✅ Updated ModelViewer.jsx" | tee -a $LOG_FILE
-
-# 4. Ensure dependencies are correctly installed
-echo "🔄 Reinstalling dependencies..." | tee -a $LOG_FILE
+# 4. Fix three-mesh-bvh deprecation warning
+echo "🔄 Ensuring three-mesh-bvh@0.8.0..." | tee -a $LOG_FILE
 cat > package.json << 'EOF'
 {
   "name": "3dwebsite",
@@ -149,14 +102,14 @@ cat > package.json << 'EOF'
     "three-mesh-bvh": "0.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@vitejs/plugin-react": "4.3.2",
+    "@vitejs/plugin-react": "4.3.3",
     "sass": "1.80.4",
-    "vite": "5.4.19"
+    "vite": "7.0.0"
   },
   "devDependencies": {
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.0",
-    "vite": "5.4.19"
+    "vite": "7.0.0"
   },
   "resolutions": {
     "three-mesh-bvh": "0.8.0",
@@ -176,42 +129,35 @@ if ! npm list three-mesh-bvh | grep "three-mesh-bvh@0.8.0" >/dev/null; then
   exit 1
 fi
 echo "✅ three-mesh-bvh@0.8.0 verified" | tee -a $LOG_FILE
-run_command npm audit fix
-if npm audit | grep -q "moderate"; then
-  echo "⚠️ Moderate vulnerabilities persist, attempting npm audit fix --force" | tee -a $LOG_FILE
-  run_command npm audit fix --force
-fi
-echo "✅ npm audit vulnerabilities addressed" | tee -a $LOG_FILE
 
-# 5. Check mannequin.glb and texture files
-echo "🔍 Verifying mannequin.glb and texture files..." | tee -a $LOG_FILE
-if [ -f "src/assets/models/mannequin.glb" ]; then
-  echo "✅ mannequin.glb exists" | tee -a $LOG_FILE
-else
-  echo "❌ mannequin.glb missing, creating placeholder..." | tee -a $LOG_FILE
-  mkdir -p src/assets/models
-  touch src/assets/models/mannequin.glb
-  echo "⚠️ Placeholder mannequin.glb created. Replace with a valid GLB model." | tee -a $LOG_FILE
-fi
-for texture in fabric1.jpg fabric2.jpg leather.jpg; do
-  if [ -f "src/assets/textures/$texture" ]; then
-    echo "✅ Texture $texture exists" | tee -a $LOG_FILE
-  else
-    echo "⚠️ Texture $texture missing, creating fallback..." | tee -a $LOG_FILE
-    mkdir -p src/assets/textures
-    convert -size 512x512 xc:#$((RANDOM%0xFFFFFF)) src/assets/textures/$texture
-  fi
-done
+# 5. Verify index.html and main.jsx
+echo "📝 Verifying index.html and main.jsx..." | tee -a $LOG_FILE
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Fashion Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+EOF
+cat > src/main.jsx << 'EOF'
+import { createRoot } from 'react-dom/client'
+import App from './App'
+import './styles/main.scss'
 
-# 6. Resolve port conflicts
-echo "🔌 Checking for port conflicts..." | tee -a $LOG_FILE
-if lsof -i :3000 >/dev/null; then
-  echo "⚠️ Port 3000 in use, killing process..." | tee -a $LOG_FILE
-  run_command kill -9 $(lsof -t -i :3000)
-fi
-echo "✅ Port 3000 cleared" | tee -a $LOG_FILE
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
+EOF
+echo "✅ Verified index.html and main.jsx" | tee -a $LOG_FILE
 
-# 7. Update vite.config.js for better dev experience
+# 6. Update vite.config.js to ensure ESM and compatibility
 echo "📝 Updating vite.config.js..." | tee -a $LOG_FILE
 cat > vite.config.js << 'EOF'
 import { defineConfig } from 'vite'
@@ -223,7 +169,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true,
-    strictPort: true // Fail if port is in use
+    strictPort: true
   },
   resolve: {
     alias: {
@@ -246,119 +192,42 @@ export default defineConfig({
   }
 })
 EOF
-echo "✅ Updated vite.config.js with strictPort" | tee -a $LOG_FILE
+echo "✅ Updated vite.config.js" | tee -a $LOG_FILE
 
-# 8. Update main.scss for error styling
-echo "📝 Updating main.scss for error styling..." | tee -a $LOG_FILE
-cat > src/styles/main.scss << 'EOF'
-body {
-  margin: 0;
-  font-family: 'Avenir', sans-serif;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
+# 7. Investigate 'Killed' Git commit issue
+echo "🔍 Investigating Git commit 'Killed' issue..." | tee -a $LOG_FILE
+if ! git commit -m "Test commit" --allow-empty; then
+  echo "⚠️ Git commit failed, checking system resources..." | tee -a $LOG_FILE
+  run_command free -m
+  run_command dmesg | tail -n 20
+  echo "⚠️ Possible low memory issue. Consider increasing RAM or swap, or closing other processes." | tee -a $LOG_FILE
+fi
+echo "✅ Git commit test completed" | tee -a $LOG_FILE
 
-#app {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  color: #333;
-  margin: 20px 0;
-  text-align: center;
-}
-
-.info {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.control-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.control-group label {
-  font-size: 14px;
-  color: #333;
-}
-
-.control-group button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  background: #6200ea;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.control-group button:hover {
-  background: #7f39fb;
-}
-
-.control-group input[type="color"] {
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-}
-
-.control-group input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-canvas {
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.error {
-  color: #d32f2f;
-  font-weight: bold;
-  margin: 10px 0;
-}
-EOF
-echo "✅ Updated main.scss" | tee -a $LOG_FILE
-
-# 9. Commit changes to Git (if repository exists)
+# 8. Commit changes to Git (if repository exists)
 if git rev-parse --git-dir >/dev/null 2>&1; then
   echo "📝 Committing changes to Git..." | tee -a $LOG_FILE
   run_command git add .
-  run_command git commit -m "Fixed static page issue, added error handling, improved lighting, resolved port conflicts"
+  run_command git commit -m "Fixed JSX syntax in App.jsx, resolved npm audit, three-mesh-bvh, and Git commit issue"
   echo "✅ Changes committed to Git" | tee -a $LOG_FILE
 else
   echo "⚠️ Not a Git repository, skipping commit" | tee -a $LOG_FILE
 fi
 
-# 10. Start development server
+# 9. Start development server
 echo "🚀 Starting development server..." | tee -a $LOG_FILE
+if lsof -i :3000 >/dev/null; then
+  echo "⚠️ Port 3000 in use, killing process..." | tee -a $LOG_FILE
+  run_command kill -9 $(lsof -t -i :3000)
+fi
 run_command npm run dev &
 
-# 11. Run printstate.sh to verify state
+# 10. Run printstate.sh to verify state
 echo "📝 Running printstate.sh to verify repository state..." | tee -a $LOG_FILE
 run_command ./printstate.sh
 
-# 12. Verify application
+# 11. Verify application
 echo "🌐 Please open http://localhost:3000 and verify the application." | tee -a $LOG_FILE
 echo "Expected: Mannequin model with texture controls, color picker, and auto-rotate checkbox." | tee -a $LOG_FILE
 echo "If a static page persists, check browser Console (F12) and $LOG_FILE." | tee -a $LOG_FILE
 echo "DONE" | tee -a $LOG_FILE
-

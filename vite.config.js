@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true,
-    strictPort: true // Fail if port is in use
+    strictPort: true
   },
   resolve: {
     alias: {

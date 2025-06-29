@@ -1,20 +1,20 @@
-===== Repository State: Sun 29 Jun 15:29:24 EAT 2025 =====
+===== Repository State: Sun 29 Jun 15:49:21 EAT 2025 =====
 Directory: /home/davis/Desktop/3dwebsite
 
 ===== ./index.html =====
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Fashion Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-</html>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;3D Fashion Studio&lt;/title&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="root"&gt;&lt;/div&gt;
+  &lt;script type="module" src="/src/main.jsx"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 
 ===== ./node_modules =====
 
@@ -28,12 +28,14 @@ export default function App() {
   const [color, setColor] = useState('#ff6b6b')
   const [outfit, setOutfit] = useState(1)
   const [rotation, setRotation] = useState(false)
+  const [error, setError] = useState(null)
 
   return (
     <div id="app">
       <h1>3D Fashion Studio</h1>
       <div className="info">
         <p>Interact with the 3D model using mouse controls!</p>
+        {error && <p className="error">Error: {error}</p>}
         <div className="controls">
           <div className="control-group">
             <label>Color:</label>
@@ -51,9 +53,9 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }>
-        <Suspense fallback={null}>
-          <ModelViewer color={color} outfit={outfit} rotation={rotation} />
+      <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
+        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></Suspense>}>
+          <ModelViewer color={color} outfit={outfit} rotation={rotation} setError={setError} />
         </Suspense>
       </Canvas>
     </div>
@@ -65,7 +67,7 @@ import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 import { OrbitControls, useTexture } from '@react-three/drei'
 
-export default function ModelViewer({ color, outfit, rotation }) {
+export default function ModelViewer({ color, outfit, rotation, setError }) {
   try {
     const { scene } = useGLTF('/assets/models/mannequin.glb')
     const textures = {
@@ -94,11 +96,14 @@ export default function ModelViewer({ color, outfit, rotation }) {
           <primitive object={scene} scale={[0.01, 0.01, 0.01]} />
         </group>
         <OrbitControls enableZoom={true} enablePan={true} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+        <ambientLight intensity={0.3} />
+        <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
+        <directionalLight position={[-5, 5, -5]} intensity={0.5} />
+        <hemisphereLight skyColor="#ffffff" groundColor="#444444" intensity={0.3} />
       </>
     )
   } catch (e) {
+    setError(`Failed to load model or textures: ${e.message}`)
     console.error('Error loading model:', e)
     return (
       <mesh>
@@ -197,6 +202,12 @@ canvas {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+.error {
+  color: #d32f2f;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 ===== ./vite.config.js =====
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -205,7 +216,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    open: true,
+    host: true,
+    strictPort: true // Fail if port is in use
   },
   resolve: {
     alias: {
@@ -237,7 +250,8 @@ On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   continue-3dwebsite.log
+	modified:   fix-3dwebsite.log
+	modified:   fix-static-3dwebsite.log
 	modified:   printstate.log
 	modified:   state.txt
 

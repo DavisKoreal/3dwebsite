@@ -96,3 +96,38 @@ Port 3001 is in use, trying another one...
 3:48:14 PM [vite] hmr update /src/components/ModelViewer.jsx
 3:49:21 PM [vite] vite.config.js changed, restarting server...
 3:49:21 PM [vite] hmr update /src/styles/main.scss
+3:49:21 PM [vite] server restarted.
+Error:   Failed to scan for dependencies from entries:
+  /home/davis/Desktop/3dwebsite/index.html
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mUnexpected closing "Suspense" tag does not match opening "mesh" tag[0m
+
+    src/App.jsx:36:105:
+[37m      36 │ ...s={[1, 1, 1]} /><meshStandardMaterial color="gray" /></[32mSuspense[37m>}>
+         │                                                           [32m~~~~~~~~[37m
+         ╵                                                           [32mmesh[0m
+
+  The opening "mesh" tag is here:
+
+    src/App.jsx:36:29:
+[37m      36 │         <Suspense fallback={<[32mmesh[37m><boxGeometry args={[1, 1, 1]} />...
+         ╵                              [32m~~~~[0m
+
+
+    at failureErrorWithLog (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:1472:15)
+    at /home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:945:25
+    at runOnEndCallbacks (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:1315:45)
+    at buildResponseToResult (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:943:7)
+    at /home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:955:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:954:54)
+    at handleRequest (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:647:17)
+    at handleIncomingPacket (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:672:7)
+    at Socket.readFromStdout (/home/davis/Desktop/3dwebsite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:507:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+3:54:19 PM [vite] page reload index.html
+3:54:20 PM [vite] vite.config.js changed, restarting server...

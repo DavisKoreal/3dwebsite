@@ -1,0 +1,63 @@
+🚀 Fixing JSX Syntax Issue for 3D Fashion Studio - Sun 29 Jun 15:53:27 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📝 Fixing JSX syntax error in src/App.jsx...
+✅ Fixed src/App.jsx JSX syntax
+🛡️ Addressing npm audit vulnerabilities...
+🔧 Executing: npm install vite@7.0.0 @vitejs/plugin-react@4.3.3 --save --legacy-peer-deps
+npm warn idealTree Removing dependencies.vite in favor of devDependencies.vite
+
+added 4 packages, changed 4 packages, and audited 166 packages in 12s
+
+20 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+🔧 Executing: npm audit fix
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: @vitejs/plugin-react@4.3.3
+npm error Found: vite@7.0.0
+npm error node_modules/vite
+npm error   dev vite@"^7.0.0" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peer vite@"^4.2.0 || ^5.0.0" from @vitejs/plugin-react@4.3.3
+npm error node_modules/@vitejs/plugin-react
+npm error   @vitejs/plugin-react@"^4.3.3" from the root project
+npm error
+npm error Conflicting peer dependency: vite@5.4.19
+npm error node_modules/vite
+npm error   peer vite@"^4.2.0 || ^5.0.0" from @vitejs/plugin-react@4.3.3
+npm error   node_modules/@vitejs/plugin-react
+npm error     @vitejs/plugin-react@"^4.3.3" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /home/davis/.npm/_logs/2025-06-29T12_53_40_306Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-29T12_53_40_306Z-debug-0.log
+⚠️ Warning: Error executing: npm audit fix
+✅ npm audit vulnerabilities addressed
+🔄 Ensuring three-mesh-bvh@0.8.0...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 163 packages, and audited 164 packages in 34s
+
+19 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+✅ three-mesh-bvh@0.8.0 verified
+📝 Verifying index.html and main.jsx...
+✅ Verified index.html and main.jsx
+📝 Updating vite.config.js...
+✅ Updated vite.config.js
+🔍 Investigating Git commit 'Killed' issue...
+✅ Git commit test completed
+📝 Committing changes to Git...
+🔧 Executing: git add .
