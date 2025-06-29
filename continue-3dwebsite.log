@@ -1,0 +1,69 @@
+🚀 Continuing 3D Fashion Studio Improvement - Sun 29 Jun 15:03:38 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📝 Updating ModelViewer.jsx for GLB model...
+✅ Updated ModelViewer.jsx for mannequin.glb
+🛡️ Addressing npm audit vulnerabilities...
+🔧 Executing: npm audit fix
+
+added 2 packages, and audited 163 packages in 9s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@5.4.19, which is outside the stated dependency range
+node_modules/esbuild
+  vite  0.11.0 - 6.1.6
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+⚠️ Warning: Error executing: npm audit fix
+✅ npm audit vulnerabilities addressed
+🔄 Ensuring three-mesh-bvh@0.8.0...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+🚀 Continuing 3D Fashion Studio Improvement - Sun 29 Jun 15:12:04 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📝 Updating ModelViewer.jsx for GLB model...
+✅ Updated ModelViewer.jsx for mannequin.glb
+🛡️ Addressing npm audit vulnerabilities...
+🔧 Executing: npm audit fix
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-29T12_12_04_457Z-debug-0.log
+⚠️ Warning: Error executing: npm audit fix
+✅ npm audit vulnerabilities addressed
+🔄 Ensuring three-mesh-bvh@0.8.0...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 160 packages, and audited 161 packages in 35s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✅ three-mesh-bvh@0.8.0 verified
+🔍 Verifying texture files...
+✅ Texture fabric1.jpg exists
+✅ Texture fabric2.jpg exists
+✅ Texture leather.jpg exists
+📝 Committing changes to Git...
+🔧 Executing: git add .

@@ -1,0 +1,213 @@
+🚀 Improving 3D Fashion Studio - Sun 29 Jun 14:29:00 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+🗑️ Removing redundant src/js/main.jsx...
+✅ Removed src/js/main.jsx and src/js directory
+📝 Updating App.jsx to integrate ModelViewer with button-based UI...
+📝 Updating ModelViewer.jsx...
+🗑️ Removing DebugScene.jsx...
+✅ Removed DebugScene.jsx
+📝 Updating main.scss...
+📝 Updating vite.config.js...
+📦 Installing jq...
+🔧 Executing: sudo apt-get update
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Hit:3 https://download.docker.com/linux/ubuntu jammy InRelease
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Hit:5 https://packages.microsoft.com/repos/edge stable InRelease
+Get:6 https://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]
+Ign:7 https://storage.googleapis.com/download.dartlang.org/linux/debian stable InRelease
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Hit:11 https://storage.googleapis.com/download.dartlang.org/linux/debian stable Release
+Hit:13 https://dl.winehq.org/wine-builds/ubuntu jammy InRelease
+Get:14 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,213 B]
+Hit:15 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main i386 Packages [483 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,168 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [161 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,092 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [376 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:25 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,060 B]
+Get:26 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:27 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [16.4 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 3,760 kB in 15s (256 kB/s)
+Reading package lists...
+🔧 Executing: sudo apt-get install -y jq
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  apturl-common atop avahi-utils bmon ccze cheese-common clang-tidy
+  clang-tidy-14 clang-tools-14 cmatrix dkms gedit-common
+  gir1.2-freedesktop-dev gir1.2-gck-1 gir1.2-gcr-3 gir1.2-goa-1.0
+  gir1.2-gst-plugins-bad-1.0 gir1.2-gweather-3.0 gir1.2-javascriptcoregtk-4.0
+  gir1.2-json-1.0 gir1.2-nma-1.0 gir1.2-snapd-1 gir1.2-soup-2.4
+  gir1.2-webkit2-4.0 gnome-bluetooth-common gnome-software-common
+  gnome-todo-common gnome-video-effects guile-2.2-libs htop jp2a
+  libabsl20210324 libann0 libarmadillo10 libatk-bridge2.0-dev libatk1.0-data
+  libatk1.0-dev libatkmm-1.6-1v5 libatspi2.0-dev libauthen-sasl-perl libb2-1
+  libboost-atomic-dev libboost-chrono-dev libboost-container-dev
+  libboost-context-dev libboost-coroutine-dev libboost-exception-dev
+  libboost-fiber-dev libboost-filesystem-dev libboost-graph-dev
+  libboost-graph-parallel-dev libboost-iostreams-dev libboost-locale-dev
+  libboost-log-dev libboost-math-dev libboost-mpi-dev
+  libboost-mpi-python1.74.0 libboost-nowide-dev libboost-numpy-dev
+  libboost-program-options-dev libboost-random-dev libboost-serialization-dev
+  libboost-stacktrace-dev libboost-test-dev libboost-timer-dev
+  libboost-tools-dev libboost-type-erasure-dev libboost-wave-dev libbrotli-dev
+  libc++1 libc++1-14 libc++abi1-14 libcairo2-dev libcairomm-1.0-1v5
+  libcamel-1.2-63 libcdt5 libcfitsio9 libcgraph6 libclone-perl
+  libclutter-1.0-common libcogl-common libcogl-path20 libcogl20 libcolord-gtk1
+  libconfuse-common libconfuse2 libdata-dump-perl libdatrie-dev
+  libdazzle-1.0-0 libdazzle-common libdbus-1-dev libdbusmenu-gtk4
+  libdmapsharing-3.0-2 libebackend-1.2-10 libebook-1.2-20
+  libebook-contacts-1.2-3 libecal-2.0-1 libedata-book-1.2-26
+  libedata-cal-2.0-1 libedataserver-1.2-26 libedataserverui-1.2-3 libegl-dev
+  libegl1-mesa-dev libepoxy-dev libfile-listing-perl libflatpak0
+  libfont-afm-perl libfontconfig-dev libfontconfig1-dev libfreerdp-client2-2
+  libfreerdp-server2-2 libfreerdp2-2 libfreetype-dev libfreetype6-dev
+  libfribidi-dev libgdal30 libgdk-pixbuf-2.0-dev libgeocode-glib0
+  libgeos3.10.2 libgl-dev libgles-dev libgles1 libglibmm-2.4-1v5
+  libglu1-mesa-dev libglvnd-core-dev libglvnd-dev libglx-dev
+  libgnome-bluetooth13 libgnome-todo libgraphite2-dev libgsoap-2.8.117
+  libgtksourceview-4-common libgts-0.7-5 libgts-bin libgvpr2 libgweather-3-16
+  libgweather-common libhtml-form-perl libhtml-format-perl libhtml-parser-perl
+  libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl
+  libhttp-daemon-perl libhttp-date-perl libhttp-message-perl
+  libhttp-negotiate-perl libilmbase25 libio-html-perl libio-pty-perl
+  libipc-run-perl libjavascriptcoregtk-4.0-18 libkf5syntaxhighlighting-data
+  libkf5syntaxhighlighting5 liblab-gamut1 libllvm15 liblua5.3-0
+  liblwp-mediatypes-perl liblzf1 libmessaging-menu0 libmng2 libmozjs-91-0
+  libmpdec3 libnet-http-perl libnetplan0 libnsl2 libopencv-calib3d4.5d
+  libopencv-contrib4.5d libopencv-core4.5d libopencv-dnn4.5d
+  libopencv-features2d4.5d libopencv-flann4.5d libopencv-highgui4.5d
+  libopencv-imgcodecs4.5d libopencv-imgproc4.5d libopencv-ml4.5d
+  libopencv-objdetect4.5d libopencv-photo4.5d libopencv-shape4.5d
+  libopencv-stitching4.5d libopencv-superres4.5d libopencv-video4.5d
+  libopencv-videoio4.5d libopencv-videostab4.5d libopencv-viz4.5d
+  libopencv4.5d-jni libopenexr25 libopengl-dev liborcus-0.17-0
+  liborcus-parser-0.17-0 libpathplan4 libpcre16-3 libpcre3 libpcre3-dev
+  libpcre32-3 libpcrecpp0v5 libperl5.34 libpixman-1-dev libproj22
+  libprotobuf23 libpython3.10 libpython3.10-dev libpython3.10-minimal
+  libpython3.10-stdlib libqqwing2v5 libqt5designer5 libqt5designercomponents5
+  libqt5qmlworkerscript5 libqt5quicktest5 libqt5quickwidgets5
+  libqt5serialport5 libqt5x11extras5 libqt5xml5t64 libqt5xmlpatterns5
+  libqt6core6t64 libqt6dbus6t64 libqt6gui6t64 libraw20 librest-0.7-0
+  libsdl1.2debian libsdl2-2.0-0 libsigc++-2.0-0v5 libsnapd-glib1
+  libsoup-gnome2.4-1 libspatialite7 libsss-nss-idmap0 libsuperlu5 libtbb2
+  libtesseract4 libthai-dev libtie-ixhash-perl libtime-duration-perl
+  libtimedate-perl libtry-tiny-perl libts0t64 libunwind-14 libvirglrenderer1
+  libvncserver1 libvulkan-dev libwayland-bin libwayland-dev
+  libwebkit2gtk-4.0-37 libwinpr2-2 libwww-robotrules-perl libwxbase3.0-0v5
+  libxcb-render0-dev libxcb-shm0-dev libxcomposite-dev libxcursor-dev
+  libxdamage-dev libxdot4 libxext-dev libxfixes-dev libxft-dev libxi-dev
+  libxinerama-dev libxkbcommon-dev libxml-xpathengine-perl libxrandr-dev
+  libxrender-dev libxtst-dev libyaml-cpp0.7 linux-hwe-6.8-headers-6.8.0-60
+  linux-hwe-6.8-tools-6.8.0-60 moreutils pastebinit perl-modules-5.34
+  perl-openssl-defaults plocate python3-future python3-gi-cairo
+  python3-lib2to3 python3-lockfile python3-macaroonbakery python3-netifaces
+  python3-protobuf python3-psutil python3-pyatspi python3-pymacaroons
+  python3-rfc3339 python3-urwid python3-wcwidth python3.10 python3.10-dev
+  python3.10-minimal qdoc-qt5 qml-module-qtgraphicaleffects qml-module-qtqml
+  qml-module-qtqml-models2 qml-module-qtquick-controls
+  qml-module-qtquick-layouts qml-module-qtquick-window2 qml-module-qtquick2
+  qmlscene qt3d5-doc qt5-doc qt6-image-formats-plugins
+  qtattributionsscanner-qt5 qtbase5-dev-tools qtbase5-doc qtcharts5-doc
+  qtconnectivity5-doc qtcreator-data qtcreator-doc qtdatavisualization5-doc
+  qtdeclarative5-dev-tools qtdeclarative5-doc qtgamepad5-doc
+  qtgraphicaleffects5-doc qtlocation5-doc qtmultimedia5-doc qtnetworkauth5-doc
+  qtquickcontrols2-5-doc qtquickcontrols5-doc qtscript5-doc qtscxml5-doc
+  qtsensors5-doc qtserialbus5-doc qtserialport5-doc qtsvg5-doc qttools5-doc
+  qtvirtualkeyboard5-doc qtwayland5-doc qtwebchannel5-doc qtwebengine5-doc
+  qtwebsockets5-doc qtwebview5-doc qtx11extras5-doc qtxmlpatterns5-dev-tools
+  qtxmlpatterns5-doc run-one speedometer tmux virtualbox-dkms
+  wayland-protocols
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libjq1 libonig5
+The following NEW packages will be installed:
+  jq libjq1 libonig5
+0 upgraded, 3 newly installed, 0 to remove and 208 not upgraded.
+Need to get 378 kB of archives.
+After this operation, 1,125 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libonig5 amd64 6.9.9-1build1 [172 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libjq1 amd64 1.7.1-3build1 [141 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 jq amd64 1.7.1-3build1 [65.5 kB]
+Fetched 378 kB in 2s (152 kB/s)
+Selecting previously unselected package libonig5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 323615 files and directories currently installed.)
+Preparing to unpack .../libonig5_6.9.9-1build1_amd64.deb ...
+Unpacking libonig5:amd64 (6.9.9-1build1) ...
+Selecting previously unselected package libjq1:amd64.
+Preparing to unpack .../libjq1_1.7.1-3build1_amd64.deb ...
+Unpacking libjq1:amd64 (1.7.1-3build1) ...
+Selecting previously unselected package jq.
+Preparing to unpack .../jq_1.7.1-3build1_amd64.deb ...
+Unpacking jq (1.7.1-3build1) ...
+Setting up libonig5:amd64 (6.9.9-1build1) ...
+Setting up libjq1:amd64 (1.7.1-3build1) ...
+Setting up jq (1.7.1-3build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+🔄 Ensuring three-mesh-bvh@0.8.0...
+🔧 Executing: npm install three-mesh-bvh@0.8.0 --save --legacy-peer-deps
+
+up to date, audited 163 packages in 5s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+🔧 Executing: npm install three-stdlib@2.32.2 --save --legacy-peer-deps
+
+up to date, audited 163 packages in 3s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✅ three-mesh-bvh@0.8.0 verified
+⚙️ Updating package.json with resolutions...
+🔄 Reinstalling dependencies...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 160 packages, and audited 161 packages in 46s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+📢 Please download a mannequin STL or GLB model (e.g., from Sketchfab, ensuring proper licensing).
+Place it in src/assets/models/ (e.g., mannequin-real.stl or mannequin.glb).
+Then update src/components/ModelViewer.jsx with the new model path.
+For STL, change the path in useLoader(STLLoader, '/assets/models/mannequin.stl') to the new file.
+For GLB, modify ModelViewer.jsx to use useGLTF as follows:
+  import { useGLTF } from '@react-three/drei'
+  const { scene } = useGLTF('/assets/models/mannequin.glb')
+  Replace <mesh geometry={geometry} ...> with <primitive object={scene} ...>
+Please confirm when done by creating a file named 'model-ready.txt' in the project root:
+  touch model-ready.txt
+Waiting for model-ready.txt...

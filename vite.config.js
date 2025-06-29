@@ -17,6 +17,13 @@ export default defineConfig({
     include: /src\/.*\.[jt]sx?$/
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', '@react-three/fiber', '@react-three/drei', 'three', 'three-stdlib']
+    include: ['react', 'react-dom', '@react-three/fiber', '@react-three/drei', 'three', 'three-stdlib', 'three-mesh-bvh']
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern'
+      }
+    }
   }
 })

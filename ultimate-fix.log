@@ -355,3 +355,162 @@ Creating texture: leather.jpg with color #fcbad3
 👉 Run the project with: npm run dev
 🌐 Open: http://localhost:3000
 📄 Full log saved to: ultimate-fix.log
+🚀 Starting Ultimate 3D Fashion Studio Fix - Sun 29 Jun 01:38:27 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+🌐 Checking network connectivity...
+✅ Network connectivity to npm registry confirmed
+🛠️ Checking for ImageMagick...
+✅ ImageMagick already installed
+🔄 Cleaning and removing conflicting dependencies...
+🔧 Executing: npm cache clean --force
+npm warn using --force Recommended protections disabled.
+🗑️ Removing Expo and React Native dependencies...
+🔧 Executing: npm pkg delete dependencies.expo
+🔧 Executing: npm pkg delete dependencies.@expo/dom-webview
+🔧 Executing: npm pkg delete dependencies.expo-asset
+🔧 Executing: npm pkg delete dependencies.expo-file-system
+🔧 Executing: npm pkg delete dependencies.expo-gl
+🔧 Executing: npm pkg delete dependencies.react-native-webview
+🔧 Executing: npm pkg delete devDependencies.vite
+🔧 Executing: npm pkg set devDependencies.vite=5.4.8
+🔄 Installing dependencies...
+🔧 Executing: npm install three@0.169.0 @react-three/fiber@8.17.8 @react-three/drei@9.114.0 three-stdlib@2.32.2 three-mesh-bvh@0.8.0 dat.gui@0.7.9 react@18.3.1 react-dom@18.3.1 @vitejs/plugin-react@4.3.2 sass@1.80.4 vite@5.4.8 --save
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 161 packages, and audited 162 packages in 3m
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+🔧 Executing: npm install --save-dev @types/react@18.3.11 @types/react-dom@18.3.0
+
+added 2 packages, changed 2 packages, and audited 164 packages in 6s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+✅ Dependencies installed successfully
+📁 Rebuilding project structure...
+🔧 Executing: mkdir -p src/components src/styles src/assets/models src/assets/textures
+🛠️ Creating fallback STL model...
+✅ Fallback STL model created
+🎨 Generating fallback textures...
+Creating texture: fabric1.jpg with color #a8d8ea
+Creating texture: fabric2.jpg with color #aa96da
+Creating texture: leather.jpg with color #fcbad3
+✅ Textures created successfully
+⚙️ Creating Vite configuration...
+📝 Creating main.jsx...
+📝 Creating App.jsx...
+📝 Creating DebugScene.jsx...
+📝 Creating main.scss...
+📝 Creating index.html...
+⚙️ Updating package.json scripts...
+🔧 Executing: npm pkg set scripts.dev=vite
+🔧 Executing: npm pkg set scripts.build=vite build
+🔧 Executing: npm pkg set scripts.preview=vite preview
+🔍 Verifying setup...
+✅ main.jsx exists
+✅ App.jsx exists
+✅ DebugScene.jsx exists
+✅ main.scss exists
+✅ index.html exists
+✅ vite.config.js exists
+🔍 Checking package.json for conflicting dependencies...
+✅ No 'expo' dependency found
+✅ Compatible vite version
+🌐 Resetting npm registry to default...
+🔧 Executing: npm config set registry https://registry.npmjs.org
+🎉 Setup completed successfully!
+👉 Run the project with: npm run dev
+🌐 Open: http://localhost:3000
+📄 Full log saved to: ultimate-fix.log
+🚀 Starting Ultimate 3D Fashion Studio Fix - Sun 29 Jun 01:56:31 EAT 2025
+🌐 Checking network connectivity...
+✅ Network connectivity to npm registry confirmed
+🔄 Cleaning node_modules and npm cache...
+🔧 Executing: npm cache clean --force
+npm warn using --force Recommended protections disabled.
+🗑️ Removing conflicting dependencies...
+🔧 Executing: npm pkg delete dependencies.expo
+🔧 Executing: npm pkg delete dependencies.@expo/dom-webview
+🔧 Executing: npm pkg delete dependencies.expo-asset
+🔧 Executing: npm pkg delete dependencies.expo-file-system
+🔧 Executing: npm pkg delete dependencies.expo-gl
+🔧 Executing: npm pkg delete dependencies.react-native-webview
+🔧 Executing: npm pkg delete devDependencies.vite
+🔧 Executing: npm pkg set devDependencies.vite=5.4.8
+⚙️ Updating package.json with resolutions...
+🔄 Installing dependencies...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+npm error code ECONNRESET
+npm error network aborted
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: /home/davis/.npm/_logs/2025-06-28T22_56_36_558Z-debug-0.log
+⚠️ Warning: Error executing: npm install --legacy-peer-deps
+⚠️ Retrying npm install with alternative registry...
+🔧 Executing: npm config set registry https://registry.npmmirror.com
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 160 packages in 4m
+
+17 packages are looking for funding
+  run `npm fund` for details
+🔧 Executing: npm config set registry https://registry.npmjs.org
+🔧 Executing: npm install --save-dev @types/react@18.3.11 @types/react-dom@18.3.0
+
+added 2 packages, and audited 163 packages in 18s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+🛡️ Running npm audit fix...
+🔧 Executing: npm audit fix
+
+up to date, audited 163 packages in 12s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@5.4.19, which is outside the stated dependency range
+node_modules/esbuild
+  vite  0.11.0 - 6.1.6
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix --force
+⚠️ Warning: Error executing: npm audit fix

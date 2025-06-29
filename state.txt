@@ -1,0 +1,223 @@
+===== Repository State: Sun 29 Jun 14:24:47 EAT 2025 =====
+Directory: /home/davis/Desktop/3dwebsite
+
+===== ./index.html =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Fashion Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Avenir:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+
+===== ./node_modules =====
+
+===== ./src/App.jsx =====
+import { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import DebugScene from './components/DebugScene'
+import './styles/main.scss'
+
+export default function App() {
+  return (
+    <div id="app">
+      <h1>3D Fashion Studio</h1>
+      <div className="info">
+        <p>Interact with the 3D model using mouse controls!</p>
+      </div>
+      <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
+        <Suspense fallback={null}>
+          <DebugScene />
+        </Suspense>
+      </Canvas>
+    </div>
+  )
+}
+
+===== ./src/components/DebugScene.jsx =====
+import { useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+
+export default function DebugScene() {
+  const boxRef = useRef()
+
+  useFrame(() => {
+    if (boxRef.current) {
+      boxRef.current.rotation.x += 0.01
+      boxRef.current.rotation.y += 0.01
+    }
+  })
+
+  return (
+    <>
+      <mesh ref={boxRef}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="hotpink" />
+      </mesh>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      <OrbitControls enableZoom={true} enablePan={true} />
+    </>
+  )
+}
+
+===== ./src/components/ModelViewer.jsx =====
+import { useRef, useState, useEffect } from 'react'
+import { useLoader } from '@react-three/fiber'
+import { STLLoader } from 'three-stl-loader'
+import { OrbitControls, useTexture } from '@react-three/drei'
+
+export default function ModelViewer() {
+  const [color, setColor] = useState('#ff6b6b')
+  const [rotation, setRotation] = useState(false)
+  const [outfit, setOutfit] = useState(1)
+  
+  useEffect(() => {
+    const gui = new (require('dat.gui')).GUI()
+    gui.addColor({ color }, 'color').onChange(setColor)
+    gui.add({ rotation }, 'rotation').onChange(setRotation)
+    gui.add({ outfit }, 'outfit', 1, 3, 1).onChange(setOutfit)
+    return () => gui.destroy()
+  }, [])
+
+  try {
+    const geometry = useLoader(STLLoader, '/assets/models/mannequin.stl')
+    const textures = {
+      1: useTexture('/assets/textures/fabric1.jpg'),
+      2: useTexture('/assets/textures/fabric2.jpg'),
+      3: useTexture('/assets/textures/leather.jpg')
+    }
+
+    return (
+      <>
+        <group rotation={[0, rotation ? Math.PI : 0, 0]}>
+          <mesh geometry={geometry} castShadow receiveShadow>
+            <meshStandardMaterial 
+              color={color} 
+              map={textures[outfit]}
+              roughness={0.4}
+              metalness={0.1}
+            />
+          </mesh>
+        </group>
+        <OrbitControls />
+      </>
+    )
+  } catch (e) {
+    console.error('Error loading model:', e)
+    return (
+      <mesh>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshBasicMaterial color="hotpink" />
+      </mesh>
+    )
+  }
+}
+
+===== ./src/js/main.jsx =====
+import { createRoot } from 'react-dom/client'
+import App from '../App'
+import '../styles/main.scss'
+
+const container = document.getElementById('root')
+const root = createRoot(container)
+root.render(<App />)
+
+===== ./src/main.jsx =====
+import { createRoot } from 'react-dom/client'
+import App from './App'
+import './styles/main.scss'
+
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
+
+===== ./src/styles/main.scss =====
+body {
+  margin: 0;
+  font-family: 'Avenir', sans-serif;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.info {
+  background: rgba(255,255,255,0.9);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+canvas {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+===== ./vite.config.js =====
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.[jt]sx?$/
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', '@react-three/fiber', '@react-three/drei', 'three', 'three-stdlib', 'three-mesh-bvh']
+  }
+})
+
+===== package-lock.json (summary) =====
+Showing package-lock.json summary (full file omitted due to size)
+⚠️ jq not installed, skipping package-lock.json summary
+
+===== Git Status =====
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   act.sh
+	modified:   package-lock.json
+	modified:   package.json
+	modified:   ultimate-fix.log
+	modified:   vite.config.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	printstate.log
+	printstate.sh
+	state.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
