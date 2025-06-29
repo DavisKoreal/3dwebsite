@@ -6,7 +6,8 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
-    host: true // Expose to network to avoid port conflicts
+    host: true,
+    strictPort: true // Fail if port is in use
   },
   resolve: {
     alias: {

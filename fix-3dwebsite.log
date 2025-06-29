@@ -69,3 +69,30 @@ Run `npm audit` for details.
 ✅ Restored index.html
 📝 Committing changes to Git...
 🔧 Executing: git add .
+🔧 Executing: git commit -m Fixed App.jsx syntax, npm audit, three-mesh-bvh, Vite CJS, port conflict, and printstate.sh
+[master d219337] Fixed App.jsx syntax, npm audit, three-mesh-bvh, Vite CJS, port conflict, and printstate.sh
+ 10 files changed, 307 insertions(+), 91 deletions(-)
+ create mode 100644 fix-3dwebsite.log
+✅ Changes committed to Git
+🚀 Starting development server...
+🌐 Please open http://localhost:3000 and verify the application.
+🔧 Executing: npm run dev
+Expected: Mannequin model with texture controls, color picker, and auto-rotate checkbox.
+If issues occur, check browser Console (F12) and fix-3dwebsite.log.
+DONE
+
+> 3dwebsite@1.0.0 dev
+> vite
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+Port 3000 is in use, trying another one...
+Port 3001 is in use, trying another one...
+
+  VITE v5.4.19  ready in 1156 ms
+
+  ➜  Local:   http://localhost:3002/
+  ➜  Network: http://192.168.0.104:3002/
+3:48:14 PM [vite] hmr update /src/App.jsx
+3:48:14 PM [vite] hmr update /src/components/ModelViewer.jsx
+3:49:21 PM [vite] vite.config.js changed, restarting server...
+3:49:21 PM [vite] hmr update /src/styles/main.scss

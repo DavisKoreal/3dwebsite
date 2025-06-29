@@ -1,0 +1,65 @@
+🚀 Fixing Static Page Issue for 3D Fashion Studio - Sun 29 Jun 15:48:14 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📝 Verifying and updating src/App.jsx...
+✅ Updated src/App.jsx with error handling
+📝 Updating ModelViewer.jsx with error handling and better lighting...
+✅ Updated ModelViewer.jsx
+🔄 Reinstalling dependencies...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 159 packages, and audited 160 packages in 51s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✅ three-mesh-bvh@0.8.0 verified
+🔧 Executing: npm audit fix
+
+added 2 packages, and audited 162 packages in 12s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@7.0.0, which is a breaking change
+node_modules/esbuild
+  vite  0.11.0 - 6.1.6
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+    @vitejs/plugin-react  2.0.0-alpha.0 - 4.3.3
+    Depends on vulnerable versions of vite
+    node_modules/@vitejs/plugin-react
+
+3 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+⚠️ Warning: Error executing: npm audit fix
+✅ npm audit vulnerabilities addressed
+🔍 Verifying mannequin.glb and texture files...
+✅ mannequin.glb exists
+✅ Texture fabric1.jpg exists
+✅ Texture fabric2.jpg exists
+✅ Texture leather.jpg exists
+🔌 Checking for port conflicts...
+⚠️ Port 3000 in use, killing process...
+🔧 Executing: kill -9 391548
+✅ Port 3000 cleared
+📝 Updating vite.config.js...
+✅ Updated vite.config.js with strictPort
+📝 Updating main.scss for error styling...
+✅ Updated main.scss
+📝 Committing changes to Git...
+🔧 Executing: git add .

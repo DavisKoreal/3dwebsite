@@ -2,7 +2,7 @@ import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 import { OrbitControls, useTexture } from '@react-three/drei'
 
-export default function ModelViewer({ color, outfit, rotation }) {
+export default function ModelViewer({ color, outfit, rotation, setError }) {
   try {
     const { scene } = useGLTF('/assets/models/mannequin.glb')
     const textures = {
@@ -31,11 +31,14 @@ export default function ModelViewer({ color, outfit, rotation }) {
           <primitive object={scene} scale={[0.01, 0.01, 0.01]} />
         </group>
         <OrbitControls enableZoom={true} enablePan={true} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+        <ambientLight intensity={0.3} />
+        <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
+        <directionalLight position={[-5, 5, -5]} intensity={0.5} />
+        <hemisphereLight skyColor="#ffffff" groundColor="#444444" intensity={0.3} />
       </>
     )
   } catch (e) {
+    setError(`Failed to load model or textures: ${e.message}`)
     console.error('Error loading model:', e)
     return (
       <mesh>

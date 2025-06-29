@@ -7,12 +7,14 @@ export default function App() {
   const [color, setColor] = useState('#ff6b6b')
   const [outfit, setOutfit] = useState(1)
   const [rotation, setRotation] = useState(false)
+  const [error, setError] = useState(null)
 
   return (
     <div id="app">
       <h1>3D Fashion Studio</h1>
       <div className="info">
         <p>Interact with the 3D model using mouse controls!</p>
+        {error && <p className="error">Error: {error}</p>}
         <div className="controls">
           <div className="control-group">
             <label>Color:</label>
@@ -31,8 +33,8 @@ export default function App() {
         </div>
       </div>
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
-        <Suspense fallback={null}>
-          <ModelViewer color={color} outfit={outfit} rotation={rotation} />
+        <Suspense fallback={<mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="gray" /></Suspense>}>
+          <ModelViewer color={color} outfit={outfit} rotation={rotation} setError={setError} />
         </Suspense>
       </Canvas>
     </div>
