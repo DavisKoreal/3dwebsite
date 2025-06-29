@@ -1,0 +1,71 @@
+🚀 Fixing 3D Fashion Studio - Sun 29 Jun 15:41:36 EAT 2025
+📂 Working in: /home/davis/Desktop/3dwebsite
+📝 Fixing syntax error in src/App.jsx...
+✅ Fixed src/App.jsx syntax
+🛡️ Addressing npm audit vulnerabilities...
+🔧 Executing: npm install vite@5.4.19 --save --legacy-peer-deps
+npm warn idealTree Removing dependencies.vite in favor of devDependencies.vite
+
+added 2 packages, changed 1 package, and audited 163 packages in 9s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+🔧 Executing: npm audit fix
+
+up to date, audited 163 packages in 7s
+
+18 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@7.0.0, which is a breaking change
+node_modules/esbuild
+  vite  0.11.0 - 6.1.6
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+    @vitejs/plugin-react  2.0.0-alpha.0 - 4.3.3
+    Depends on vulnerable versions of vite
+    node_modules/@vitejs/plugin-react
+
+3 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+⚠️ Warning: Error executing: npm audit fix
+✅ npm audit vulnerabilities addressed
+🔄 Ensuring three-mesh-bvh@0.8.0...
+🔧 Executing: npm install --legacy-peer-deps
+npm warn deprecated three-mesh-bvh@0.7.8: Deprecated due to three.js version incompatibility. Please use v0.8.0, instead.
+
+added 160 packages, and audited 161 packages in 43s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✅ three-mesh-bvh@0.8.0 verified
+📝 Updating vite.config.js to use ESM...
+✅ Updated vite.config.js for ESM and port conflict mitigation
+📝 Updating printstate.sh to fix index.html output...
+✅ Updated printstate.sh to escape HTML content
+📝 Restoring index.html content...
+✅ Restored index.html
+📝 Committing changes to Git...
+🔧 Executing: git add .

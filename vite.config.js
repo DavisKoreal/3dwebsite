@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
+    open: true,
+    host: true // Expose to network to avoid port conflicts
   },
   resolve: {
     alias: {

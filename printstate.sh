@@ -38,7 +38,12 @@ echo "📝 Printing repository state..." | tee -a $LOG_FILE
     -type f \( -name "*.jsx" -o -name "*.js" -o -name "*.html" -o -name "*.scss" -o -name "*.css" \) \
     ! -name "package.json" | sort | while read -r file; do
     echo "===== $file ====="
-    cat "$file"
+    if [ "${file##*.}" = "html" ]; then
+      # Escape HTML content to preserve tags
+      sed 's/</\&lt;/g; s/>/\&gt;/g' "$file"
+    else
+      cat "$file"
+    fi
     echo ""
   done
 

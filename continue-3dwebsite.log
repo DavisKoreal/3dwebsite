@@ -138,3 +138,12 @@ Run `npm audit` for details.
 ✅ Texture leather.jpg exists
 📝 Committing changes to Git...
 🔧 Executing: git add .
+🔧 Executing: git commit -m Updated ModelViewer to use mannequin.glb, fixed dependencies, ensured textures
+[master a8f11c2] Updated ModelViewer to use mannequin.glb, fixed dependencies, ensured textures
+ 3 files changed, 183 insertions(+), 84 deletions(-)
+✅ Changes committed to Git
+🚀 Starting development server...
+🌐 Please open http://localhost:3000 and verify the application.
+Expected: Mannequin model with texture controls, color picker, and auto-rotate checkbox.
+If issues occur, check browser Console (F12) and continue-3dwebsite.log.
+DONE

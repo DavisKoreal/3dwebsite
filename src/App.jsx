@@ -30,7 +30,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }>
+      <Canvas shadows camera={{ position: [0, 0, 5], fov: 50 }}>
         <Suspense fallback={null}>
           <ModelViewer color={color} outfit={outfit} rotation={rotation} />
         </Suspense>
