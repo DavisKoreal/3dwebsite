@@ -1,4 +1,4 @@
-===== Repository State: Sun 29 Jun 15:54:20 EAT 2025 =====
+===== Repository State: Sun 29 Jun 16:15:13 EAT 2025 =====
 Directory: /home/davis/Desktop/3dwebsite
 
 ===== ./index.html =====
@@ -250,9 +250,7 @@ On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   fix-3dwebsite.log
 	modified:   fix-jsx-3dwebsite.log
-	modified:   fix-static-3dwebsite.log
 	modified:   printstate.log
 	modified:   state.txt
 
