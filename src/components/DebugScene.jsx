@@ -1,26 +1,28 @@
-import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+
+import { useRef } from 'react';
+import { useFrame, useLoader } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { STLLoader } from 'three-stdlib';
 
 export default function DebugScene() {
-  const boxRef = useRef()
+  const meshRef = useRef();
+  const geometry = useLoader(STLLoader, '/assets/models/mannequin.stl');
 
   useFrame(() => {
-    if (boxRef.current) {
-      boxRef.current.rotation.x += 0.01
-      boxRef.current.rotation.y += 0.01
+    if (meshRef.current) {
+      meshRef.current.rotation.x += 0.01;
+      meshRef.current.rotation.y += 0.01;
     }
-  })
+  });
 
   return (
     <>
-      <mesh ref={boxRef}>
-        <boxGeometry args={[1, 1, 1]} />
+      <mesh ref={meshRef} geometry={geometry}>
         <meshStandardMaterial color="hotpink" />
       </mesh>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={1} />
       <OrbitControls enableZoom={true} enablePan={true} />
     </>
-  )
+  );
 }
